@@ -1,5 +1,19 @@
 # Revisão — celebração e responsividade
 
+## Correção de rotas no GitHub Pages
+
+- [ ] Diagnosticar por que as rotas profundas retornam 404.
+- [ ] Corrigir o fallback e a restauração das URLs da SPA.
+- [ ] Publicar a correção e testar hub, módulos e assets.
+- [ ] Entregar o resultado atualizado dos testes.
+
+## Desbloqueio do deploy GitHub Pages
+
+- [ ] Confirmar o estado atual do Pages e do workflow no repositório.
+- [ ] Corrigir qualquer falha de build ou configuração que ainda possa ser automatizada.
+- [ ] Validar o resultado e registrar a ativação manual necessária, se houver.
+- [ ] Entregar instruções objetivas para concluir o deploy.
+
 ## Repositório GitHub Pages
 
 - [x] Verificar usuário GitHub autenticado e escolher nome do repositório.
