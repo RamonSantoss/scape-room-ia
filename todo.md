@@ -2,11 +2,13 @@
 
 ## Repositório GitHub Pages
 
-- [ ] Verificar usuário GitHub autenticado e escolher nome do repositório.
-- [ ] Preparar workflow de build/deploy e fallback de SPA.
-- [ ] Criar o repositório e enviar o projeto sem mídias privadas do Manus.
-- [ ] Validar o build de Pages e documentar domínios por módulo.
-- [ ] Entregar o link do repositório e as configurações pendentes.
+- [x] Verificar usuário GitHub autenticado e escolher nome do repositório.
+- [x] Preparar workflow de build/deploy e fallback de SPA.
+- [x] Criar o repositório e enviar o projeto sem mídias privadas do Manus.
+- [x] Validar o build de Pages e documentar domínios por módulo.
+- [x] Entregar o link do repositório e as configurações pendentes.
+
+> Pendente fora do sandbox: ativar **Settings → Pages → Source: GitHub Actions** no repositório. O workflow já está configurado, mas o GitHub recusou a etapa `configure-pages` enquanto Pages permanece desativado.
 
 ## Preparação para GitHub Pages
 
