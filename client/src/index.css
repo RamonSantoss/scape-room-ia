@@ -307,6 +307,17 @@ button:focus-visible, a:focus-visible { outline: 2px solid #B8F36B; outline-offs
   .scene--lesson .rail-tip { display: none; }
 }
 
+@media (min-width: 901px) and (max-height: 820px) {
+  .scene--lesson { gap: 22px; }
+  .lesson-heading { margin-bottom: 10px; }
+  .lesson-heading h1 { font-size: clamp(20px, 2.2vw, 31px); }
+  .lesson-bottom { margin-top: 10px; }
+  .lesson-rail { padding: 16px; }
+  .chapter-switcher { margin: 18px 0 13px; }
+  .rail-tip { margin-top: 18px; padding-top: 12px; }
+  .rail-tip p { font-size: 11px; }
+}
+
 @media (max-width: 720px) {
   .topbar { height: 61px; padding: 0 18px; gap: 12px; }
   .brand-lockup { min-width: auto; }

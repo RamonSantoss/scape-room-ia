@@ -1,5 +1,13 @@
 # Revisão — celebração e responsividade
 
+## Auditoria de notebooks
+
+- [x] Capturar as quatro telas de aula em 1366×768 e 1440×900.
+- [x] Verificar player, poster, playlist, títulos, controles e rodapé em cada módulo.
+- [x] Corrigir cortes, overflow e excesso de altura específicos de notebook.
+- [x] Revalidar notebook, desktop e mobile.
+- [ ] Salvar checkpoint e entregar a auditoria.
+
 ## Correção do player e capa de suspense
 
 - [x] Inspecionar o player atual e os breakpoints da tela de aula.

@@ -24,7 +24,8 @@ const sceneOrder: Scene[] = ["briefing", "lesson", "room", "practice"];
 export default function ModulePage({ module }: { module: ModuleData }) {
   const [, navigate] = useLocation();
   const saved = useMemo(() => getProgress(module.key), [module.key]);
-  const [scene, setScene] = useState<Scene>(saved.roomComplete ? "practice" : saved.lessonComplete ? "room" : "briefing");
+  const demoLesson = import.meta.env.DEV && typeof window !== "undefined" && new URLSearchParams(window.location.search).get("demo") === "lesson";
+  const [scene, setScene] = useState<Scene>(demoLesson ? "lesson" : saved.roomComplete ? "practice" : saved.lessonComplete ? "room" : "briefing");
   const [chapterIndex, setChapterIndex] = useState(saved.chapterIndex || 0);
   const [lessonUnlocked, setLessonUnlocked] = useState(saved.lessonComplete);
   const [roomComplete, setRoomComplete] = useState(saved.roomComplete);
@@ -43,8 +44,8 @@ export default function ModulePage({ module }: { module: ModuleData }) {
     setRoomComplete(saved.roomComplete);
     setPracticeStarted(saved.practiceStarted);
     setJustCompleted(!saved.roomComplete);
-    setScene(saved.roomComplete ? "practice" : saved.lessonComplete ? "room" : "briefing");
-  }, [module.key, saved]);
+    setScene(demoLesson ? "lesson" : saved.roomComplete ? "practice" : saved.lessonComplete ? "room" : "briefing");
+  }, [demoLesson, module.key, saved]);
 
   const currentChapter = module.chapters[chapterIndex];
   const currentPuzzle = module.puzzles[puzzleIndex];
