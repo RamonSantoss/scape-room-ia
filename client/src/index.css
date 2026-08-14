@@ -217,6 +217,32 @@ button:focus-visible, a:focus-visible { outline: 2px solid #B8F36B; outline-offs
 .rail-tip svg { flex: 0 0 auto; color: var(--module-color); }
 .rail-tip p { margin: 0; font-size: 12px; line-height: 1.42; }
 .scene--room, .scene--practice { display: grid; grid-template-columns: minmax(0, .82fr) minmax(390px, .95fr); align-items: center; gap: clamp(40px, 10vw, 150px); }
+.confetti-burst { position: fixed; inset: 50% 0 0; z-index: 3; overflow: visible; pointer-events: none; }
+.confetti-piece { position: absolute; top: 0; left: 50%; display: block; width: 8px; height: 8px; background: var(--confetti-color); opacity: 0; transform: translate3d(var(--confetti-x), var(--confetti-y), 0) rotate(var(--confetti-rotate)); animation: confettiFall 1.8s cubic-bezier(.2,.75,.3,1) var(--confetti-delay) both; }
+.confetti-piece--square { border-radius: 1px; }
+.confetti-piece--dash { width: 4px; height: 16px; border-radius: 2px; }
+.confetti-piece--diamond { width: 7px; height: 7px; transform: translate3d(var(--confetti-x), var(--confetti-y), 0) rotate(45deg); }
+@keyframes confettiFall { 0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg) scale(.75); } 12% { opacity: 1; } 82% { opacity: .92; } 100% { opacity: 0; transform: translate3d(var(--confetti-x), var(--confetti-y), 0) rotate(var(--confetti-rotate)) scale(1); } }
+.achievement-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 21px; }
+.achievement-badge { position: relative; display: grid; place-items: center; width: 79px; height: 79px; border: 1px solid color-mix(in srgb, var(--badge-color) 70%, transparent); border-radius: 50%; background: rgba(7,12,20,.86); box-shadow: 0 0 0 7px rgba(7,12,20,.42), 0 0 32px color-mix(in srgb, var(--badge-color) 27%, transparent); animation: badgeReveal .65s cubic-bezier(.23,1,.32,1) both; }
+.achievement-badge::before, .achievement-badge::after { content: ""; position: absolute; border: 1px solid color-mix(in srgb, var(--badge-color) 38%, transparent); border-radius: 50%; transform: rotate(31deg); }
+.achievement-badge::before { inset: 7px -4px; }
+.achievement-badge::after { inset: -4px 7px; transform: rotate(-31deg); }
+.achievement-badge__orbit { position: absolute; border: 1px dashed color-mix(in srgb, var(--badge-color) 50%, transparent); border-radius: 50%; }
+.achievement-badge__orbit--one { inset: -10px 16px; transform: rotate(31deg); }
+.achievement-badge__orbit--two { inset: 16px -10px; transform: rotate(-31deg); }
+.achievement-badge__core { position: relative; display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; color: var(--badge-color); background: color-mix(in srgb, var(--badge-color) 15%, #07101A); }
+.achievement-badge__core > svg:first-child { filter: drop-shadow(0 0 7px color-mix(in srgb, var(--badge-color) 52%, transparent)); }
+.achievement-badge__check { position: absolute; right: -1px; bottom: 1px; padding: 2px; width: 16px; height: 16px; border: 2px solid #07101A; border-radius: 50%; color: #07101A; background: var(--badge-color); }
+.achievement-badge__star { position: absolute; top: -5px; right: 10px; z-index: 2; display: grid; place-items: center; width: 19px; height: 19px; border-radius: 50%; color: #07101A; background: var(--badge-color); }
+.achievement-badge__ribbon { position: absolute; bottom: -13px; z-index: -1; width: 16px; height: 25px; background: color-mix(in srgb, var(--badge-color) 55%, #17231C); clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 75%, 0 100%); }
+.achievement-badge__ribbon--left { left: 20px; transform: rotate(9deg); }
+.achievement-badge__ribbon--right { right: 20px; transform: rotate(-9deg); }
+@keyframes badgeReveal { 0% { opacity: 0; transform: scale(.84) rotate(-8deg); } 65% { transform: scale(1.05) rotate(2deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
+.achievement-copy { display: flex; flex-direction: column; gap: 5px; }
+.achievement-copy span { color: var(--module-color); font: 500 9px/1 "IBM Plex Mono", monospace; letter-spacing: .13em; }
+.achievement-copy strong { color: #F7F3E9; font: 600 16px/1.1 "Space Grotesk", sans-serif; }
+.achievement-copy small { color: rgba(247,243,233,.43); font: 500 9px/1 "IBM Plex Mono", monospace; letter-spacing: .1em; }
 .room-copy h1 em, .practice-copy h1 em { color: var(--module-color); font-style: normal; }
 .room-progress { display: flex; align-items: center; gap: 13px; margin-top: 40px; color: rgba(247,243,233,.46); font: 500 9px/1 "IBM Plex Mono", monospace; letter-spacing: .1em; }
 .room-progress > div { display: flex; gap: 6px; }
@@ -337,8 +363,19 @@ button:focus-visible, a:focus-visible { outline: 2px solid #B8F36B; outline-offs
   .puzzle-option { padding: 9px 10px; font-size: 11px; }
   .puzzle-feedback { min-height: 25px; font-size: 8px; }
   .hint-box { font-size: 10px; }
-  .success-seal { width: 35px; height: 35px; margin-bottom: 11px; }
-  .success-seal svg { width: 20px; }
+  .achievement-wrap { gap: 10px; margin-bottom: 12px; }
+  .achievement-badge { width: 57px; height: 57px; }
+  .achievement-badge__core { width: 32px; height: 32px; }
+  .achievement-badge__core > svg:first-child { width: 20px; }
+  .achievement-badge__check { width: 13px; height: 13px; padding: 1px; }
+  .achievement-badge__star { top: -4px; right: 5px; width: 15px; height: 15px; }
+  .achievement-badge__star svg { width: 9px; }
+  .achievement-badge__ribbon { bottom: -10px; width: 12px; height: 19px; }
+  .achievement-badge__ribbon--left { left: 14px; }
+  .achievement-badge__ribbon--right { right: 14px; }
+  .achievement-copy span { font-size: 7px; }
+  .achievement-copy strong { font-size: 13px; }
+  .achievement-copy small { font-size: 7px; }
   .practice-copy h1 { font-size: 37px; }
   .practice-steps { margin-top: 18px; gap: 7px; }
   .practice-step { gap: 4px; }
@@ -357,4 +394,18 @@ button:focus-visible, a:focus-visible { outline: 2px solid #B8F36B; outline-offs
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
+  .confetti-burst { display: none; }
+}
+
+@media (max-height: 700px) and (min-width: 721px) {
+  .home-layout { gap: 36px; }
+  .home-intro h1 { margin-top: 15px; margin-bottom: 14px; font-size: clamp(43px, 5.5vw, 72px); }
+  .home-actions { margin-top: 20px; }
+  .home-stats { margin-top: 30px; }
+  .scene--briefing h1 { margin-top: 15px; margin-bottom: 13px; font-size: clamp(40px, 4.8vw, 66px); }
+  .outcome-card { margin-top: 19px; }
+  .briefing-actions { margin-top: 20px; }
+  .briefing-route { margin-top: 13px; }
+  .achievement-wrap { margin-bottom: 13px; }
+  .practice-copy h1 { margin-top: 14px; }
 }
