@@ -2,10 +2,10 @@
 
 ## Correção de rotas no GitHub Pages
 
-- [ ] Diagnosticar por que as rotas profundas retornam 404.
-- [ ] Corrigir o fallback e a restauração das URLs da SPA.
-- [ ] Publicar a correção e testar hub, módulos e assets.
-- [ ] Entregar o resultado atualizado dos testes.
+- [x] Diagnosticar por que as rotas profundas retornam 404.
+- [x] Corrigir o fallback e a restauração das URLs da SPA.
+- [x] Publicar a correção e testar hub, módulos e assets.
+- [x] Entregar o resultado atualizado dos testes.
 
 ## Desbloqueio do deploy GitHub Pages
 
