@@ -26,6 +26,7 @@ export type ModuleData = {
   color: string;
   softColor: string;
   sceneImage: string;
+  coverImage: string;
   duration: string;
   aiLink: string;
   aiLabel: string;
@@ -48,6 +49,7 @@ export const modules: ModuleData[] = [
     color: "#B8F36B",
     softColor: "#293A22",
     sceneImage: "/manus-storage/room-prompts_085b772e.jpg",
+    coverImage: "/manus-storage/player-suspense-cover_009ae865.jpg",
     duration: "7 aulas · 42 min",
     aiLink: "https://chatgpt.com/",
     aiLabel: "Abrir uma IA de conversa",
@@ -80,6 +82,7 @@ export const modules: ModuleData[] = [
     color: "#FFC978",
     softColor: "#493A25",
     sceneImage: "/manus-storage/room-artes_e8edb56f.jpg",
+    coverImage: "/manus-storage/player-suspense-cover_009ae865.jpg",
     duration: "7 aulas · 45 min",
     aiLink: "https://chatgpt.com/",
     aiLabel: "Abrir uma IA de imagens",
@@ -112,6 +115,7 @@ export const modules: ModuleData[] = [
     color: "#7FE8E3",
     softColor: "#1D3F42",
     sceneImage: "/manus-storage/room-sites_fb00b045.jpg",
+    coverImage: "/manus-storage/player-suspense-cover_009ae865.jpg",
     duration: "7 aulas · 44 min",
     aiLink: "https://chatgpt.com/",
     aiLabel: "Abrir uma IA para criar sites",
@@ -144,6 +148,7 @@ export const modules: ModuleData[] = [
     color: "#D4B4FF",
     softColor: "#372B4A",
     sceneImage: "/manus-storage/room-dia-a-dia_e595bd19.jpg",
+    coverImage: "/manus-storage/player-suspense-cover_009ae865.jpg",
     duration: "6 aulas · 38 min",
     aiLink: "https://chatgpt.com/",
     aiLabel: "Abrir uma IA para praticar",
