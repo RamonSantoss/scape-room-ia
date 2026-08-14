@@ -1,5 +1,20 @@
 # Revisão — celebração e responsividade
 
+## Repositório GitHub Pages
+
+- [ ] Verificar usuário GitHub autenticado e escolher nome do repositório.
+- [ ] Preparar workflow de build/deploy e fallback de SPA.
+- [ ] Criar o repositório e enviar o projeto sem mídias privadas do Manus.
+- [ ] Validar o build de Pages e documentar domínios por módulo.
+- [ ] Entregar o link do repositório e as configurações pendentes.
+
+## Preparação para GitHub Pages
+
+- [ ] Definir a compatibilidade do projeto atual com hospedagem estática no GitHub Pages.
+- [ ] Preparar build, fallback de SPA e caminhos públicos para os módulos.
+- [ ] Verificar o conteúdo pronto para exportação ao GitHub.
+- [ ] Documentar a configuração de GitHub Pages e DNS por módulo.
+
 ## Auditoria de notebooks
 
 - [x] Capturar as quatro telas de aula em 1366×768 e 1440×900.

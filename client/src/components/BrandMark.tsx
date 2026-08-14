@@ -8,7 +8,7 @@ export function BrandMark({ compact = false }: BrandMarkProps) {
       <span className="brand-device" aria-hidden="true">
         <span className="brand-device__orbit brand-device__orbit--one" />
         <span className="brand-device__orbit brand-device__orbit--two" />
-        <img src="/scape-room-mark.svg" alt="" className="brand-mark" />
+        <img src={`${import.meta.env.BASE_URL}scape-room-mark.svg`} alt="" className="brand-mark" />
       </span>
       {!compact && (
         <div className="brand-wordmark">

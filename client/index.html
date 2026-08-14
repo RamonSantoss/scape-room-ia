@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
     <meta name="theme-color" content="#070C14" />
     <meta name="description" content="Scape Room IA — uma experiência guiada para aprender e praticar IA." />
-    <link rel="icon" type="image/svg+xml" href="/scape-room-mark.svg" />
+    <link rel="icon" type="image/svg+xml" href="%BASE_URL%scape-room-mark.svg" />
     <title>Scape Room IA — laboratório de prática</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,6 +13,15 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      (function () {
+        var redirect = sessionStorage.getItem("scape-redirect");
+        if (redirect) {
+          sessionStorage.removeItem("scape-redirect");
+          window.history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
   </body>
