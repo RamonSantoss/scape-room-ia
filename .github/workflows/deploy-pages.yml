@@ -44,6 +44,13 @@ jobs:
       - name: Set SPA base path in 404 fallback
         run: sed -i 's|__PAGES_BASE_PATH__|/scape-room-ia/|g' dist-pages/404.html
 
+      - name: Create deep-link entry points
+        run: |
+          for route in prompts artes sites dia-a-dia; do
+            mkdir -p "dist-pages/modulo/$route"
+            cp dist-pages/index.html "dist-pages/modulo/$route/index.html"
+          done
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
