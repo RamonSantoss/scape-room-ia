@@ -1,3 +1,5 @@
+/* Design reminder: keep the global shell scene-based and never introduce a long-scroll course layout. */
+
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
@@ -5,31 +7,26 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-
+import { ModuleRoute } from "./pages/ModulePage";
 
 function Router() {
   return (
     <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
+      <Route path="/" component={Home} />
+      <Route path="/modulo/prompts"><ModuleRoute moduleKey="prompts" /></Route>
+      <Route path="/modulo/artes"><ModuleRoute moduleKey="artes" /></Route>
+      <Route path="/modulo/sites"><ModuleRoute moduleKey="sites" /></Route>
+      <Route path="/modulo/dia-a-dia"><ModuleRoute moduleKey="dia-a-dia" /></Route>
+      <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <Router />

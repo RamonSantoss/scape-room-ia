@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Símbolo Scape Room IA</title>
+  <desc id="desc">Uma fechadura geométrica cercada por três órbitas de sinal.</desc>
+  <rect width="128" height="128" rx="26" fill="#0B1417"/>
+  <g fill="none" stroke-linecap="round">
+    <ellipse cx="64" cy="64" rx="49" ry="25" transform="rotate(32 64 64)" stroke="#B8F36B" stroke-width="3" opacity=".8"/>
+    <ellipse cx="64" cy="64" rx="49" ry="25" transform="rotate(-32 64 64)" stroke="#7FE8E3" stroke-width="3" opacity=".65"/>
+    <path d="M25 28a46 46 0 0 1 49-13" stroke="#B8F36B" stroke-width="3"/>
+  </g>
+  <path d="M64 42a15 15 0 0 0-15 15v7h-5v27h40V64h-5v-7a15 15 0 0 0-15-15Zm-8 22v-7a8 8 0 1 1 16 0v7H56Z" fill="#F7F3E9"/>
+  <circle cx="64" cy="76" r="4" fill="#0B1417"/>
+  <path d="M64 79v7" stroke="#0B1417" stroke-width="3" stroke-linecap="round"/>
+</svg>
